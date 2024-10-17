@@ -8,8 +8,9 @@ AFTER INSERT ON orders
 FOR EACH ROW
 BEGIN
     UPDATE items
-    SET quantity = quantity - NEW.number
+    SET quantity = quantity - 1
     WHERE id = NEW.item_id;
-END $$
+END 
+$$
 
 DELIMITER;
